@@ -3,8 +3,12 @@ const app = express();
 const PORT = 3000;
 const tests_route = require('./routes/tests_route');
 const cors = require('cors');
+
 const create_user = require('./routes/createUser_route')
 const login_route = require('./routes/login_route')
+const editTest = require('./routes/addQuestion_route')
+const updateQuestion_route = require('./routes/updateQuestion_route')
+const deleteQuestion = require('./routes/deleteQuestion_route')
 
 app.use(express.json());
 app.use(cors())
@@ -16,6 +20,9 @@ app.get('/', (req, res) => {
 app.use('/tests', tests_route);
 app.use('/create-user', create_user)
 app.use('/login', login_route);
+app.use('/add-question',editTest)
+app.use('/update-question', updateQuestion_route)
+app.use('/delete-question',deleteQuestion)
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
