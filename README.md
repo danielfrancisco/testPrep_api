@@ -2,8 +2,9 @@ Backend (Express.js)
 
 ## Stack Used
 
+- Node.js v20.7.0
 - Express.js
--Mysql
+- Mysql
 
 ## Live Demo
 
