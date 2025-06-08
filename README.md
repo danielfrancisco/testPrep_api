@@ -29,4 +29,4 @@ node app.js
 
 Stateless, Horizontally Scalable
 
-backend endpoints so don’t rely on in-memory session data. Any state  lives in a database or shared cache. That way you can spin up (or down) identical server instances behind a load balancer without “sticky sessions.”
+backend endpoints don’t rely on in-memory session data. Any state  lives in a database or shared cache. That way you can spin up (or down) identical server instances behind a load balancer without “sticky sessions.”
