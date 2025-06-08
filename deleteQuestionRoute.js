@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db');
+const db = require('./db');
 
-router.post('/', (req, res)=>{
+router.delete('/', (req, res)=>{
     const available = ['biology', 'math', 'chemistry', 'history']
      const{subject} = req.body
       

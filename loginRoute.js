@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const express = require('express');
 const router = express.Router();
-const db = require('../db');
+const db = require('./db');
 
 const SECRET_KEY = 'secretkey';
 
@@ -30,6 +30,10 @@ router.post('/', (req, res) => {
               res.json({ token, username });
        });
 });
+
+router.get('/',(req, res)=>{
+       res.send('login')
+})
 
 module.exports = router;
 

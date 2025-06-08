@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const db = require('../db');
+const db = require('./db');
 
 router.get('/:subject', (req, res) => {
   // Get the subject from the URL parameter and convert it to lowercase
