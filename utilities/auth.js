@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secret = 'your-secret-key'; // store this in an env variable in production
+const secret = 'your-secret-key'; 
 
 // Middleware to verify token
 function authenticateToken(req, res, next) {
