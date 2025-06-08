@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const router = express.Router();
 const db = require('./db');
-
-const SECRET_KEY = 'secretkey';
+const {secret} = require('./utilities/auth')
 
 router.post('/', (req, res) => {
        const available = ['student', 'admin']
@@ -26,14 +25,11 @@ router.post('/', (req, res) => {
               return res.status(401).json({ message: 'Invalid credentials' });
               }
               const username = results?.[0]?.[`${role}_name`];
-              const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '1h' });
+              const token = jwt.sign({ username }, secret, { expiresIn: '1h' });
               res.json({ token, username });
        });
 });
 
-router.get('/',(req, res)=>{
-       res.send('login')
-})
 
 module.exports = router;
 
